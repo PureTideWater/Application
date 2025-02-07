@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link"
 import { Package, Truck, Users, DollarSign } from "lucide-react"
 
@@ -58,46 +59,24 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Recent Activity */}
-      <div className="grid gap-4 md:grid-cols-2">
-        <div className="rounded-lg bg-white/50 backdrop-blur-sm p-6 shadow-premium">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-montserrat font-semibold text-ocean-blue">Recent Orders</h3>
-            <Link href="/orders" className="text-sm text-coastal-teal hover:text-ocean-blue">
-              View all
-            </Link>
-          </div>
-          <div className="space-y-4">
-            {[1, 2, 3].map((_, i) => (
-              <div key={i} className="flex items-center justify-between p-4 rounded-md bg-white">
-                <div>
-                  <p className="font-medium text-ocean-blue">Order #1234{i}</p>
-                  <p className="text-sm text-slate">5 Gallon Water x 2</p>
-                </div>
-                <span className="text-sm text-coastal-teal">In Progress</span>
-              </div>
-            ))}
-          </div>
+      {/* Recent Orders */}
+      <div className="rounded-lg bg-white/50 backdrop-blur-sm p-6 shadow-premium">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="font-montserrat font-semibold text-ocean-blue">Recent Orders</h3>
+          <Link href="/orders" className="text-sm text-coastal-teal hover:text-ocean-blue">
+            View all
+          </Link>
         </div>
-
-        <div className="rounded-lg bg-white/50 backdrop-blur-sm p-6 shadow-premium">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-montserrat font-semibold text-ocean-blue">Upcoming Deliveries</h3>
-            <Link href="/deliveries" className="text-sm text-coastal-teal hover:text-ocean-blue">
-              View all
-            </Link>
-          </div>
-          <div className="space-y-4">
-            {[1, 2, 3].map((_, i) => (
-              <div key={i} className="flex items-center justify-between p-4 rounded-md bg-white">
-                <div>
-                  <p className="font-medium text-ocean-blue">Delivery Zone {i + 1}</p>
-                  <p className="text-sm text-slate">4 orders pending</p>
-                </div>
-                <span className="text-sm text-coastal-teal">Today, 2:00 PM</span>
+        <div className="space-y-4">
+          {[1, 2, 3].map((_, i) => (
+            <div key={i} className="flex items-center justify-between p-4 rounded-md bg-white">
+              <div>
+                <p className="font-medium text-ocean-blue">Order #1234{i}</p>
+                <p className="text-sm text-slate">5 Gallon Water x 2</p>
               </div>
-            ))}
-          </div>
+              <span className="text-sm text-coastal-teal">In Progress</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
